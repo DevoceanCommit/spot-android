@@ -17,6 +17,19 @@
         android:theme="@style/Theme.DevoceanSpot"
         tools:targetApi="31">
 
+        <activity
+            android:name="com.devocean.feature.main.MainActivity"
+            android:exported="true"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.DevoceanSpot">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
