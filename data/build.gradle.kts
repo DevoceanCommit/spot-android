@@ -1,6 +1,7 @@
 plugins {
     alias(libs.plugins.android.library)
-    alias(libs.plugins.jetbrains.kotlin.android)
+    alias(libs.plugins.kotlin.android)
+    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -33,10 +34,23 @@ android {
 }
 
 dependencies {
+    implementation(project(":domain"))
 
+    implementation(libs.hilt.android)
+    implementation(libs.androidx.security)
     implementation(libs.androidx.core.ktx)
-    implementation(libs.androidx.appcompat)
-    implementation(libs.material)
+
+    implementation(libs.kotlin)
+    implementation(libs.kotlinx.serialization.json.v151)
+    implementation(libs.coroutines.android)
+
+    implementation(libs.retrofit.core)
+    implementation(libs.okhttp)
+    implementation(platform(libs.okhttp.bom))
+    implementation(libs.okhttp.logging)
+    implementation (libs.retrofit2.kotlinx.serialization.converter.v080)
+    implementation(libs.timber)
+
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
