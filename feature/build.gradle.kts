@@ -9,10 +9,10 @@ plugins {
 
 android {
     namespace = "com.devocean.feature"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
-        minSdk = 28
+        minSdk = libs.versions.minSdk.get().toInt()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -32,7 +32,20 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = libs.versions.jvmTarget.get()
+    }
+    buildFeatures {
+        compose = true
+        buildConfig = true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
+    }
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/gradle/incremental.annotation.processors"
+        }
     }
 }
 
@@ -55,8 +68,8 @@ dependencies {
 
     implementation(libs.hilt.compiler)
     implementation(libs.androidx.lifecycle.runtime.compose.android)
-//    ksp(libs.hilt.android.compiler)
-//    ksp(libs.hilt.manager)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.hilt.manager)
 
     implementation(libs.material)
     implementation(libs.androidx.material3.android)

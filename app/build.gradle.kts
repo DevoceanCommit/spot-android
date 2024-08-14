@@ -8,14 +8,14 @@ plugins {
 
 android {
     namespace = "com.devocean.spot"
-    compileSdk = 34
+    compileSdk = libs.versions.compileSdk.get().toInt()
 
     defaultConfig {
         applicationId = "com.devocean.spot"
-        minSdk = 28
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        minSdk = libs.versions.minSdk.get().toInt()
+        targetSdk = libs.versions.targetSdk.get().toInt()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -24,6 +24,13 @@ android {
     }
 
     buildTypes {
+//        debug {
+//            buildConfigField(
+//                "String",
+//                "OPEN_BASE_URL",
+//                gradleLocalProperties(rootDir, providers).getProperty("open.base.url")
+//            )
+//        }
         release {
             isMinifyEnabled = false
             proguardFiles(
@@ -37,20 +44,23 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = libs.versions.jvmTarget.get()
     }
     buildFeatures {
         compose = true
+        buildConfig = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = "1.5.1"
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
     }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
+            excludes += "/META-INF/gradle/incremental.annotation.processors"
         }
     }
 }
+
 
 dependencies {
     implementation(project(":core"))
@@ -65,8 +75,8 @@ dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.hilt.android)
-//    ksp(libs.hilt.android.compiler)
-//    ksp(libs.hilt.manager)
+    ksp(libs.hilt.android.compiler)
+    ksp(libs.hilt.manager)
     implementation(libs.androidx.workManager)
     implementation(libs.androidx.hiltWorkManager)
 
