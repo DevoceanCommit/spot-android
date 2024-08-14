@@ -24,13 +24,6 @@ android {
     }
 
     buildTypes {
-//        debug {
-//            buildConfigField(
-//                "String",
-//                "OPEN_BASE_URL",
-//                gradleLocalProperties(rootDir, providers).getProperty("open.base.url")
-//            )
-//        }
         release {
             isMinifyEnabled = false
             proguardFiles(
