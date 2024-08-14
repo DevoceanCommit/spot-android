@@ -1,4 +1,4 @@
-package com.devocean.spot.ui.theme
+package com.devocean.core.designsystem.theme
 
 import androidx.compose.ui.graphics.Color
 
