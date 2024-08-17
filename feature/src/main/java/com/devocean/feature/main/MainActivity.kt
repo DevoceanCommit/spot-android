@@ -14,7 +14,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DevoceanSpotTheme {
-                MainScreen()
+                val navigator: MainNavigator = rememberMainNavigator()
+                MainScreen(navigator)
             }
         }
     }
