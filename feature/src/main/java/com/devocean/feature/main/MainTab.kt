@@ -12,11 +12,11 @@ enum class MainTab(
     val route: MainTabRoute,
 ) {
     HOME(
-        icon = R.drawable.baseline_home_24,
+        icon = R.drawable.ic_home_24,
         route = Home
     ),
     BOOKMARK(
-        icon = R.drawable.baseline_bookmark_24,
+        icon = R.drawable.ic_bookmark_24,
         route = Bookmark
     );
 
