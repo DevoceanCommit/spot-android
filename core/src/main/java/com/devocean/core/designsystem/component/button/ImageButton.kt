@@ -17,7 +17,7 @@ import androidx.compose.ui.unit.Dp
 import com.devocean.core.util.NoRippleTheme
 
 @Composable
-fun HomeTopButton(
+fun ImageButton(
     paddingVertical: Dp,
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier,

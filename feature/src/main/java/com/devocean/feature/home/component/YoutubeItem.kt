@@ -19,7 +19,7 @@ import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
-import com.devocean.core.designsystem.component.button.HomeCategoryButton
+import com.devocean.core.designsystem.component.button.TextButton
 import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 
@@ -60,7 +60,7 @@ fun YoutubeItem(
                 text = title,
                 fontWeight = FontWeight.Bold,
             )
-            HomeCategoryButton(
+            TextButton(
                 paddingVertical = 0.dp,
                 onButtonClick = { onCategoryClick() },
                 text = category,

@@ -21,6 +21,7 @@ fun NavGraphBuilder.myPageNavGraph(
 ) {
     composable<MyPage> {
         MyPageRoute(
+            onBackClick = { navHostController.navigateUp() }
         )
     }
 }

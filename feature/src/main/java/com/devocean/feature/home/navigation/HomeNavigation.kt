@@ -22,7 +22,7 @@ fun NavGraphBuilder.homeNavGraph(
 ) {
     composable<Home> {
         HomeRoute(
-            onFixClick = { navHostController.navigateMyPage() }
+            onProfileClick = { navHostController.navigateMyPage() }
         )
     }
 }

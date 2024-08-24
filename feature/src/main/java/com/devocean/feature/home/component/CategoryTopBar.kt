@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.devocean.core.designsystem.component.button.HomeCategoryButton
+import com.devocean.core.designsystem.component.button.TextButton
 import com.devocean.feature.R
 
 @Composable
@@ -29,13 +29,13 @@ fun CategoryTopBar(
             ),
         horizontalArrangement = Arrangement.spacedBy(10.dp)
     ) {
-        HomeCategoryButton(
+        TextButton(
             paddingVertical = 1.dp,
             onButtonClick = { onCategoryClick() },
             text = stringResource(id = R.string.home_category_first),
             modifier = buttonSize
         )
-        HomeCategoryButton(
+        TextButton(
             paddingVertical = 1.dp,
             onButtonClick = { onCategoryClick() },
             text = stringResource(id = R.string.home_category_first),

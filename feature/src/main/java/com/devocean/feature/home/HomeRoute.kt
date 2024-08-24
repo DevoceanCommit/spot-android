@@ -28,7 +28,7 @@ import com.google.accompanist.systemuicontroller.rememberSystemUiController
 @Composable
 fun HomeRoute(
     viewModel: HomeViewModel = hiltViewModel(),
-    onFixClick: () -> Unit
+    onProfileClick: () -> Unit
 ) {
     val systemUiController = rememberSystemUiController()
 
@@ -60,7 +60,7 @@ fun HomeRoute(
         onSearchClick = { search ->
             viewModel.fetchSearch(search)
         },
-        onFixClick = { onFixClick() }
+        onProfileClick = { onProfileClick() }
     )
 }
 
