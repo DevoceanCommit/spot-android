@@ -28,6 +28,7 @@ fun HomeCategoryButton(
 
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         Button(
+            modifier = modifier,
             contentPadding = PaddingValues(paddingVertical),
             interactionSource = interactionSource,
             colors = ButtonDefaults.buttonColors(

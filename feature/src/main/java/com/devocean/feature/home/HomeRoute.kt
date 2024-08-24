@@ -92,15 +92,16 @@ fun HomeScreen(
         ) {
             items(dataList) { item ->
                 Box(
-                    modifier = Modifier
-                        .padding(horizontal = 20.dp)
+                    modifier = Modifier.padding(horizontal = 20.dp)
                 ) {
                     YoutubeItem(
                         image = item.image,
                         title = item.title,
                         category = item.category,
                         bookmark = item.bookmark,
-                        summary = item.summary
+                        summary = item.summary,
+                        isBookmark = true,
+                        spotDate = "spot date: 10/14"
                     )
                 }
             }

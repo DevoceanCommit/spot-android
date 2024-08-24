@@ -2,12 +2,14 @@ package com.devocean.feature.home.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -50,7 +52,9 @@ fun YoutubeItem(
                 .aspectRatio(16 / 9f)
         )
         Row(
-            modifier = modifier.padding(top = 10.dp)
+            modifier = modifier.padding(top = 10.dp),
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
             Text(
                 text = title,
@@ -59,7 +63,8 @@ fun YoutubeItem(
             HomeCategoryButton(
                 paddingVertical = 0.dp,
                 onButtonClick = { onCategoryClick() },
-                text = category
+                text = category,
+                modifier = modifier.size(width = 56.dp, height = 20.dp)
             )
             Text(text = spotDate)
             if (isBookmark) Image(
