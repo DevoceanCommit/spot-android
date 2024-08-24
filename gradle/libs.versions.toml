@@ -62,6 +62,8 @@ securityVersion = "1.1.0-alpha06"
 ## Lottie
 lottieVersion = "6.0.0"
 
+accompanistSystemuicontroller = "0.28.0"
+
 ## Test
 junit = "4.13.2"
 junitVersion = "1.1.5"
@@ -148,6 +150,8 @@ material = { group = "com.google.android.material", name = "material", version.r
 timber = { module = "com.jakewharton.timber:timber", version.ref = "timber" }
 ossLicense = {group = "com.google.android.gms", name = "play-services-oss-licenses", version.ref = "ossVersion"}
 lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottieVersion"}
+
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanistSystemuicontroller" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }

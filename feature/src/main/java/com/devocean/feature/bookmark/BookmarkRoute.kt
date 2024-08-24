@@ -11,6 +11,7 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Divider
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -21,11 +22,20 @@ import com.devocean.feature.R
 import com.devocean.feature.bookmark.component.BookmarkTopBar
 import com.devocean.feature.home.YouTubeData
 import com.devocean.feature.home.component.YoutubeItem
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun BookmarkRoute(
     navigateUp: () -> Unit
 ) {
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.setStatusBarColor(
+            color = Color.White
+        )
+    }
+
     val mockDataList = listOf(
         YouTubeData(
             image = painterResource(id = R.drawable.img_youtube_default_pic),

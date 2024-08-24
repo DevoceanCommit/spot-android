@@ -30,6 +30,9 @@ fun BookmarkTopBar(
                 onBackClick()
             }
         )
-        Text(text = stringResource(id = R.string.bookmark_title))
+        Text(
+            text = stringResource(id = R.string.bookmark_title),
+            modifier = modifier.padding(start = 10.dp)
+        )
     }
 }

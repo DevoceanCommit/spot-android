@@ -9,7 +9,6 @@ import com.devocean.core.navigation.MainTabRoute
 import com.devocean.feature.bookmark.BookmarkRoute
 import kotlinx.serialization.Serializable
 
-
 fun NavController.navigateBookmark(navOptions: NavOptions? = null) {
     navigate(
         route = Bookmark,
