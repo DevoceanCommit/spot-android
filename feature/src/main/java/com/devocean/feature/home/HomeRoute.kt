@@ -11,10 +11,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.devocean.core.designsystem.theme.DevoceanSpotTheme
 import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 import com.devocean.feature.home.component.CategoryTopBar
@@ -94,31 +92,5 @@ fun HomeScreen(
                 )
             }
         }
-    }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun HomeScreenPreview() {
-    val mockDataList = listOf(
-        YouTubeData(
-            image = painterResource(id = R.drawable.img_youtube_default_pic),
-            title = "Heading",
-            category = "카테고리",
-            bookmark = false,
-            summary = "한줄요약"
-        ),
-        YouTubeData(
-            image = painterResource(id = R.drawable.img_youtube_default_pic),
-            title = "Heading",
-            category = "카테고리",
-            bookmark = false,
-            summary = "한줄요약"
-        )
-    )
-    DevoceanSpotTheme {
-        HomeScreen(
-            dataList = mockDataList
-        )
     }
 }
