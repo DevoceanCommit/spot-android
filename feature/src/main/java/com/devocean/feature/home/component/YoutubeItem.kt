@@ -2,7 +2,6 @@ package com.devocean.feature.home.component
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.aspectRatio
@@ -15,9 +14,12 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
+import com.devocean.core.designsystem.component.button.HomeCategoryButton
 import com.devocean.core.designsystem.theme.SpotGray
+import com.devocean.feature.R
 
 @Composable
 fun YoutubeItem(
@@ -26,7 +28,10 @@ fun YoutubeItem(
     title: String,
     category: String = "",
     bookmark: Boolean = true,
-    summary: String
+    summary: String,
+    onCategoryClick: () -> Unit = {},
+    isBookmark: Boolean = false,
+    spotDate: String = "",
 ) {
     Column(
         modifier = modifier
@@ -50,6 +55,20 @@ fun YoutubeItem(
             Text(
                 text = title,
                 fontWeight = FontWeight.Bold,
+            )
+            HomeCategoryButton(
+                paddingVertical = 0.dp,
+                onButtonClick = { onCategoryClick() },
+                text = category
+            )
+            Text(text = spotDate)
+            if (isBookmark) Image(
+                painter = painterResource(id = R.drawable.img_bookmark_32),
+                contentDescription = null
+            )
+            else Image(
+                painter = painterResource(id = R.drawable.img_bookmark_unselected_32),
+                contentDescription = null
             )
         }
         Text(text = summary)

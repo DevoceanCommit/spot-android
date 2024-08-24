@@ -21,9 +21,8 @@ fun HomeCategoryButton(
     paddingVertical: Dp,
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
-    isEnabled: Boolean = true,
-    text: Int,
-    textColor: Color = Color.White
+    text: String,
+    textColor: Color = Color.White,
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 
@@ -31,7 +30,6 @@ fun HomeCategoryButton(
         Button(
             contentPadding = PaddingValues(paddingVertical),
             interactionSource = interactionSource,
-            enabled = isEnabled,
             colors = ButtonDefaults.buttonColors(
                 containerColor = Color(0xFFF9623E),
                 contentColor = Color.Black
@@ -40,7 +38,7 @@ fun HomeCategoryButton(
             onClick = { onButtonClick() }
         ) {
             Text(
-                text = stringResource(id = text),
+                text =  text,
                 color = textColor
             )
         }

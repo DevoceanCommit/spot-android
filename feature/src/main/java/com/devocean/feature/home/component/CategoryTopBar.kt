@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.devocean.core.designsystem.component.button.HomeCategoryButton
 import com.devocean.feature.R
@@ -21,12 +22,12 @@ fun CategoryTopBar(
         HomeCategoryButton(
             paddingVertical = 1.dp,
             onButtonClick = { onCategoryClick() },
-            text = R.string.home_category_first
+            text = stringResource(id = R.string.home_category_first)
         )
         HomeCategoryButton(
             paddingVertical = 1.dp,
             onButtonClick = { onCategoryClick() },
-            text = R.string.home_category_first
+            text = stringResource(id = R.string.home_category_first)
         )
     }
 }
