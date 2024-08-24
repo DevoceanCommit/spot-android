@@ -8,15 +8,18 @@ import com.devocean.feature.bookmark.navigation.Bookmark
 import com.devocean.feature.home.navigation.Home
 
 enum class MainTab(
-    @DrawableRes val icon: Int,
+    @DrawableRes val selectedIcon: Int,
+    @DrawableRes val unselectedIcon: Int,
     val route: MainTabRoute,
 ) {
     HOME(
-        icon = R.drawable.ic_home_24,
+        selectedIcon = R.drawable.img_home_32,
+        unselectedIcon = R.drawable.img_home_unselected_32,
         route = Home
     ),
     BOOKMARK(
-        icon = R.drawable.ic_bookmark_24,
+        selectedIcon = R.drawable.img_bookmark_32,
+        unselectedIcon = R.drawable.img_bookmark_unselected_32,
         route = Bookmark
     );
 

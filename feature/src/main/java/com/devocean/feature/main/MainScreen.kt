@@ -7,6 +7,7 @@ import androidx.compose.animation.shrinkVertically
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Icon
 import androidx.compose.material3.NavigationBar
 import androidx.compose.material3.NavigationBarItem
@@ -15,14 +16,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.NavHost
+import com.devocean.core.designsystem.theme.SpotSub
 import com.devocean.core.util.NoRippleInteractionSource
 import com.devocean.feature.bookmark.navigation.bookmarkNavGraph
 import com.devocean.feature.home.navigation.homeNavGraph
-
 
 @Composable
 fun MainScreen(
@@ -68,7 +68,7 @@ private fun MainBottomBar(
             fullHeight / 2
         },
     ) {
-        NavigationBar(containerColor = White) {
+        NavigationBar(containerColor = SpotSub) {
             tabs.forEach { itemType ->
                 NavigationBarItem(
                     interactionSource = NoRippleInteractionSource,
@@ -78,15 +78,16 @@ private fun MainBottomBar(
                     },
                     icon = {
                         Icon(
-                            painter = painterResource(id = (itemType.icon)),
-                            contentDescription = null
+                            painter = painterResource(id = if (currentTab == itemType) itemType.selectedIcon else itemType.unselectedIcon),
+                            contentDescription = null,
+                            modifier = Modifier.size(23.dp)
                         )
                     },
                     colors = androidx.compose.material3.NavigationBarItemDefaults
                         .colors(
                             selectedIconColor = Color.Black,
-                            unselectedIconColor = Color(0xFFDF957F),
-                            indicatorColor = White
+                            unselectedIconColor = Color.Black,
+                            indicatorColor = SpotSub
                         )
                 )
             }

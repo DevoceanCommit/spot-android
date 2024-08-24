@@ -11,3 +11,4 @@ val PurpleGrey40 = Color(0xFF625b71)
 val Pink40 = Color(0xFF7D5260)
 
 val SpotMain = Color(0xFFDD6C48)
+val SpotSub = Color(0xFFDF957F)
