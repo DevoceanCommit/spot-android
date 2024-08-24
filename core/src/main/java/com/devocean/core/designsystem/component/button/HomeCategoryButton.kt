@@ -14,11 +14,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
+import androidx.compose.ui.unit.dp
 import com.devocean.core.util.NoRippleTheme
 
 @Composable
-fun HomeCategoryButton(
-    paddingVertical: Dp,
+fun TextButton(
+    paddingVertical: Dp = 0.dp,
     onButtonClick: () -> Unit,
     modifier: Modifier = Modifier,
     text: String,

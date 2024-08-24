@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
-import com.devocean.core.designsystem.component.button.HomeTopButton
+import com.devocean.core.designsystem.component.button.ImageButton
 import com.devocean.feature.R
 
 @Composable
@@ -26,7 +26,7 @@ fun HomeTopBar(
             .padding(vertical = 20.dp, horizontal = 10.dp),
         horizontalArrangement = Arrangement.SpaceBetween,
     ) {
-        HomeTopButton(
+        ImageButton(
             onButtonClick = { onFixClick() },
             painterResource = R.drawable.ic_pin_24,
             paddingVertical = 10.dp,
@@ -42,7 +42,7 @@ fun HomeTopBar(
                 .weight(1f)
                 .padding(horizontal = 10.dp)
         )
-        HomeTopButton(
+        ImageButton(
             onButtonClick = { onProfileClick() },
             painterResource = R.drawable.ic_person_24,
             paddingVertical = 10.dp,

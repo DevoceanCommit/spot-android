@@ -7,6 +7,7 @@ import androidx.navigation.NavOptions
 import androidx.navigation.compose.composable
 import com.devocean.core.navigation.MainTabRoute
 import com.devocean.feature.home.HomeRoute
+import com.devocean.feature.mypage.navigation.navigateMyPage
 import kotlinx.serialization.Serializable
 
 fun NavController.navigateHome(navOptions: NavOptions? = null) {
@@ -21,9 +22,11 @@ fun NavGraphBuilder.homeNavGraph(
 ) {
     composable<Home> {
         HomeRoute(
+            onProfileClick = { navHostController.navigateMyPage() }
         )
     }
 }
+
 
 @Serializable
 data object Home : MainTabRoute
