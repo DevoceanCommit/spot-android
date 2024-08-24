@@ -9,6 +9,7 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Divider
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -19,11 +20,20 @@ import com.devocean.core.designsystem.component.button.TextButton
 import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 import com.devocean.feature.mypage.component.MyPageTopBar
+import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable
 fun MyPageRoute(
     onBackClick: () -> Unit
 ) {
+    val systemUiController = rememberSystemUiController()
+
+    SideEffect {
+        systemUiController.setNavigationBarColor(
+            color = Color.White
+        )
+    }
+
     MyPageScreen(
         onBackClick = { onBackClick() }
     )
