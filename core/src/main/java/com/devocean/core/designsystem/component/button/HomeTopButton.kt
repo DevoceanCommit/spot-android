@@ -28,6 +28,7 @@ fun HomeTopButton(
 
     CompositionLocalProvider(LocalRippleTheme provides NoRippleTheme) {
         Button(
+            modifier = modifier,
             contentPadding = PaddingValues(paddingVertical),
             interactionSource = interactionSource,
             enabled = isEnabled,
