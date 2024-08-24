@@ -5,6 +5,7 @@ import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Button
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
@@ -27,17 +28,19 @@ fun HomeTopBar(
             .padding(vertical = 20.dp),
         horizontalArrangement = Arrangement.SpaceBetween
     ) {
-        Button(onClick = { onFixClick() }) {
-            Image(
-                painter = painterResource(id = R.drawable.ic_push_pin_24),
-                contentDescription = null
-            )
-        }
+        HomeTopButton(
+            onButtonClick = { onFixClick() },
+            painterResource = R.drawable.ic_pin_24,
+            paddingVertical = 10.dp
+        )
         TextField(value = value, onValueChange = onValueChanged)
-        Button(onClick = { onProfileClick() }) {
+        Button(onClick = {
+            onProfileClick()
+        }) {
             Image(
-                painter = painterResource(id = R.drawable.ic_person_24),
-                contentDescription = null
+                painter = painterResource(id = R.drawable.img_person),
+                contentDescription = null,
+                modifier = modifier.size(40.dp)
             )
         }
     }

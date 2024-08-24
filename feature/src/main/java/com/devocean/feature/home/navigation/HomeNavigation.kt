@@ -21,7 +21,6 @@ fun NavGraphBuilder.homeNavGraph(
 ) {
     composable<Home> {
         HomeRoute(
-            navController = navHostController
         )
     }
 }

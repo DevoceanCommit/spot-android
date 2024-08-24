@@ -22,7 +22,6 @@ fun NavGraphBuilder.bookmarkNavGraph(
 ) {
     composable<Bookmark> {
         BookmarkRoute(
-            navController = navHostController
         )
     }
 }
