@@ -5,12 +5,13 @@ import androidx.navigation.NavHostController
 
 @Composable
 fun MyPageRoute(
-    navController: NavHostController,
 ) {
     MyPageScreen()
 }
 
 @Composable
-fun MyPageScreen() {
+fun MyPageScreen(
+
+) {
 
 }

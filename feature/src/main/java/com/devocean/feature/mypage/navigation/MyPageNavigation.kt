@@ -21,7 +21,6 @@ fun NavGraphBuilder.myPageNavGraph(
 ) {
     composable<MyPage> {
         MyPageRoute(
-            navController = navHostController
         )
     }
 }
