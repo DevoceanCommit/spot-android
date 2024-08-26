@@ -46,23 +46,29 @@ fun MainScreen(
                     currentTab = navigator.currentTab,
                     onTabSelected = navigator::navigate
                 )
-                FloatingActionButton(
-                    shape = CircleShape,
-                    onClick = {
-                        onPlusDialogClick()
-                    },
-                    containerColor = SpotMain,
-                    contentColor = Color.Black,
-                    modifier = Modifier
-                        .size(width = 70.dp, height = 70.dp)
-                        .align(Alignment.TopCenter)
-                        .offset(y = (-28).dp)
-                        .zIndex(1f)
+                AnimatedVisibility(
+                    visible = navigator.showBottomBar(),
+                    enter = expandVertically(expandFrom = Alignment.Top),
+                    exit = shrinkVertically(animationSpec = tween()),
+                    modifier = Modifier.align(Alignment.TopCenter)
                 ) {
-                    Icon(
-                        painter = painterResource(id = R.drawable.ic_add_24),
-                        contentDescription = null
-                    )
+                    FloatingActionButton(
+                        shape = CircleShape,
+                        onClick = {
+                            onPlusDialogClick()
+                        },
+                        containerColor = SpotMain,
+                        contentColor = Color.Black,
+                        modifier = Modifier
+                            .size(width = 70.dp, height = 70.dp)
+                            .offset(y = (-28).dp)
+                            .zIndex(1f)
+                    ) {
+                        Icon(
+                            painter = painterResource(id = R.drawable.ic_add_24),
+                            contentDescription = null
+                        )
+                    }
                 }
             }
         },
