@@ -10,4 +10,8 @@
     <string name="mypage_name">이름</string>
     <string name="mypage_description">자기소개</string>
     <string name="mypage_bookmark">북마크한 영상</string>
+
+    <string name="plus_dialog_title">저장하고 싶은 링크를\n붙여 넣어 주세요</string>
+    <string name="plus_dialog_url">url</string>
+    <string name="plus_dialog_summary">요약하기</string>
 </resources>

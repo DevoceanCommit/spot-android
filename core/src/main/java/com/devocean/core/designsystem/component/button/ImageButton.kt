@@ -20,9 +20,9 @@ import com.devocean.core.util.NoRippleTheme
 fun ImageButton(
     paddingVertical: Dp,
     onButtonClick: () -> Unit,
+    painterResource: Int,
     modifier: Modifier = Modifier,
     isEnabled: Boolean = true,
-    painterResource : Int
 ) {
     val interactionSource = remember { MutableInteractionSource() }
 

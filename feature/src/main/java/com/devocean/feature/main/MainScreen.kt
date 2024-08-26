@@ -34,6 +34,7 @@ import com.devocean.feature.mypage.navigation.myPageNavGraph
 @Composable
 fun MainScreen(
     navigator: MainNavigator = rememberMainNavigator(),
+    onPlusDialogClick: () -> Unit = {}
 ) {
     Scaffold(
         bottomBar = {
@@ -47,7 +48,7 @@ fun MainScreen(
                 FloatingActionButton(
                     shape = CircleShape,
                     onClick = {
-                        // onPlusDialogClick()
+                        onPlusDialogClick()
                     },
                     contentColor = Color.Black,
                     modifier = Modifier
@@ -109,6 +110,7 @@ private fun MainBottomBar(
                                 else itemType.unselectedIcon
                             ),
                             contentDescription = null,
+                            modifier = Modifier.size(23.dp)
                         )
                     },
                     colors = androidx.compose.material3.NavigationBarItemDefaults

@@ -10,6 +10,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import com.devocean.core.designsystem.component.button.ImageButton
+import com.devocean.core.designsystem.component.textfield.SpotBasicTextField
 import com.devocean.feature.R
 
 @Composable
@@ -33,7 +34,7 @@ fun HomeTopBar(
             modifier = Modifier
                 .size(width = 40.dp, height = 40.dp)
         )
-        HomeSearchTextField(
+        SpotBasicTextField(
             value = value,
             onValueChange = onValueChanged,
             leftIcon = R.drawable.ic_search_24,
