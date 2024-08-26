@@ -12,6 +12,7 @@ import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.Shape
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import com.devocean.core.util.NoRippleTheme
@@ -21,6 +22,7 @@ fun TextButton(
     onButtonClick: () -> Unit,
     text: String,
     modifier: Modifier = Modifier,
+    shape: Shape = CircleShape,
     textColor: Color = Color.White,
     paddingVertical: Dp = 0.dp,
 ) {
@@ -35,7 +37,7 @@ fun TextButton(
                 containerColor = Color(0xFFF9623E),
                 contentColor = Color.Black
             ),
-            shape = CircleShape,
+            shape = shape,
             onClick = { onButtonClick() }
         ) {
             Text(
