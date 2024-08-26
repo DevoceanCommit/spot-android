@@ -24,6 +24,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.zIndex
 import androidx.navigation.compose.NavHost
+import com.devocean.core.designsystem.theme.SpotMain
 import com.devocean.core.designsystem.theme.SpotSub
 import com.devocean.core.util.NoRippleInteractionSource
 import com.devocean.feature.R
@@ -50,6 +51,7 @@ fun MainScreen(
                     onClick = {
                         onPlusDialogClick()
                     },
+                    containerColor = SpotMain,
                     contentColor = Color.Black,
                     modifier = Modifier
                         .size(width = 70.dp, height = 70.dp)

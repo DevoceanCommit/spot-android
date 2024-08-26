@@ -19,7 +19,6 @@ import androidx.compose.ui.window.DialogProperties
 import com.devocean.core.designsystem.component.button.TextButton
 import com.devocean.core.designsystem.component.textfield.SpotBasicTextField
 import com.devocean.core.designsystem.theme.SpotLightGray
-import com.devocean.core.extension.noRippleClickable
 import com.devocean.feature.R
 
 @Composable
@@ -68,6 +67,7 @@ fun PlusDialog(
             TextButton(
                 onButtonClick = {
                     // TODO: onSummaryClick()
+                    onDismissRequest()
                 },
                 text = stringResource(id = R.string.plus_dialog_summary),
                 modifier = Modifier
@@ -76,10 +76,7 @@ fun PlusDialog(
                         start = 20.dp,
                         end = 20.dp
                     )
-                    .fillMaxWidth()
-                    .noRippleClickable {
-                        onDismissRequest()
-                    },
+                    .fillMaxWidth(),
                 shape = RoundedCornerShape(8.dp)
             )
         }

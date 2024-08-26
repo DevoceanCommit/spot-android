@@ -5,7 +5,6 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.compose.runtime.getValue
-import androidx.compose.ui.platform.LocalContext
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.LocalLifecycleOwner
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
@@ -20,7 +19,6 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             DevoceanSpotTheme {
-                val context = LocalContext.current
                 val lifecycleOwner = LocalLifecycleOwner.current
 
                 val viewModel: MainViewModel = hiltViewModel()
@@ -28,9 +26,12 @@ class MainActivity : ComponentActivity() {
 
                 val state by viewModel.state.collectAsStateWithLifecycle(lifecycleOwner = lifecycleOwner)
 
-                when (state.showPlusDialog) {
-                    true -> PlusDialog(onDismissRequest = { viewModel.fetchShowDialog(false) })
-                    else -> {}
+                if (state.showPlusDialog) {
+                    PlusDialog(
+                        onDismissRequest = {
+                            viewModel.fetchShowDialog(false)
+                        }
+                    )
                 }
 
                 MainScreen(
