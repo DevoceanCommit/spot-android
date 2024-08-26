@@ -14,3 +14,4 @@ val SpotMain = Color(0xFFDD6C48)
 val SpotSub = Color(0xFFDF957F)
 
 val SpotGray = Color(0xFFBDC1CA)
+val SpotLightGray = Color(0xFFDFE1E5)

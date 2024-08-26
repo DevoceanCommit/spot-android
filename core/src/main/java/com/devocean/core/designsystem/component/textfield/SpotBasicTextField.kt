@@ -1,4 +1,4 @@
-package com.devocean.feature.home.component
+package com.devocean.core.designsystem.component.textfield
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
@@ -31,7 +31,7 @@ import androidx.compose.ui.unit.dp
 import com.devocean.core.designsystem.theme.SpotGray
 
 @Composable
-fun HomeSearchTextField(
+fun SpotBasicTextField(
     modifier: Modifier = Modifier,
     value: String = "",
     onValueChange: (String) -> Unit = {},
