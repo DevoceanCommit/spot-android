@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Divider
+import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
 import androidx.compose.ui.Alignment
@@ -73,7 +74,7 @@ fun BookmarkScreen(
         BookmarkTopBar(
             onBackClick = { onBackClick() }
         )
-        Divider(thickness = 2.dp, color = SpotGray)
+        HorizontalDivider(thickness = 2.dp, color = SpotGray)
         LazyColumn(
             modifier = modifier
                 .fillMaxSize()
