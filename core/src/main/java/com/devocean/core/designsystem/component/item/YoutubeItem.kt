@@ -2,12 +2,13 @@ package com.devocean.core.designsystem.component.item
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.aspectRatio
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -52,31 +53,34 @@ fun YoutubeItem(
                 .fillMaxWidth()
                 .aspectRatio(16 / 9f)
         )
+        Spacer(modifier = Modifier.height(5.dp))
         Text(
             text = title,
             fontWeight = FontWeight.Bold,
         )
         Row(
-            modifier = modifier.padding(top = 10.dp),
             verticalAlignment = Alignment.CenterVertically,
-            horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
+            Spacer(modifier = Modifier.height(5.dp))
             TextButton(
                 paddingVertical = 0.dp,
                 onButtonClick = { onCategoryClick() },
                 text = category,
                 modifier = modifier.size(width = 56.dp, height = 20.dp)
             )
+            Spacer(modifier = Modifier.weight(1f))
             Text(text = spotDate)
             if (isBookmark) Image(
                 painter = painterResource(id = R.drawable.img_bookmark_32),
-                contentDescription = "selected bookmark icon"
+                contentDescription = "selected bookmark icon",
             )
             else Image(
                 painter = painterResource(id = R.drawable.img_bookmark_unselected_32),
-                contentDescription = "unselected bookmark icon"
+                contentDescription = "unselected bookmark icon",
+                modifier = Modifier.size(18.dp)
             )
         }
+        Spacer(modifier = Modifier.height(5.dp))
         Text(text = summary)
     }
 }
@@ -90,7 +94,8 @@ fun YoutubeItemPreview() {
             title = "데보션 영 3기 생생한 발대식 현장",
             category = "IT",
             isBookmark = false,
-            summary = "한줄요약"
+            summary = "한줄요약",
+            spotDate = "spot date: 10/14"
         )
     }
 }
