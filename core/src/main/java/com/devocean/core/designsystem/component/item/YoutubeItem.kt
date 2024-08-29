@@ -43,7 +43,7 @@ fun YoutubeItem(
                 color = SpotGray,
                 shape = RoundedCornerShape(10.dp)
             )
-            .padding(20.dp)
+            .padding(15.dp)
             .fillMaxSize(),
     ) {
         Image(
@@ -70,6 +70,7 @@ fun YoutubeItem(
             )
             Spacer(modifier = Modifier.weight(1f))
             Text(text = spotDate)
+            Spacer(modifier = Modifier.padding(horizontal = 5.dp))
             if (isBookmark) Image(
                 painter = painterResource(id = R.drawable.img_bookmark_32),
                 contentDescription = "selected bookmark icon",
