@@ -21,7 +21,7 @@ import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 import com.devocean.feature.bookmark.component.BookmarkTopBar
 import com.devocean.feature.home.YouTubeData
-import com.devocean.feature.home.component.YoutubeItem
+import com.devocean.core.designsystem.component.item.YoutubeItem
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable

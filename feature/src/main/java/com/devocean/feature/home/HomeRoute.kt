@@ -9,7 +9,6 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
-import androidx.compose.material3.Divider
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.SideEffect
@@ -23,7 +22,7 @@ import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 import com.devocean.feature.home.component.CategoryTopBar
 import com.devocean.feature.home.component.HomeTopBar
-import com.devocean.feature.home.component.YoutubeItem
+import com.devocean.core.designsystem.component.item.YoutubeItem
 import com.google.accompanist.systemuicontroller.rememberSystemUiController
 
 @Composable

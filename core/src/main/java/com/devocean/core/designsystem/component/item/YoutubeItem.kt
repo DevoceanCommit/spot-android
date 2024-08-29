@@ -1,4 +1,4 @@
-package com.devocean.feature.home.component
+package com.devocean.core.designsystem.component.item
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -20,10 +20,10 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.devocean.core.R
 import com.devocean.core.designsystem.component.button.TextButton
 import com.devocean.core.designsystem.theme.DevoceanSpotTheme
 import com.devocean.core.designsystem.theme.SpotGray
-import com.devocean.feature.R
 
 @Composable
 fun YoutubeItem(
@@ -70,11 +70,11 @@ fun YoutubeItem(
             Text(text = spotDate)
             if (isBookmark) Image(
                 painter = painterResource(id = R.drawable.img_bookmark_32),
-                contentDescription = null
+                contentDescription = "selected bookmark icon"
             )
             else Image(
                 painter = painterResource(id = R.drawable.img_bookmark_unselected_32),
-                contentDescription = null
+                contentDescription = "unselected bookmark icon"
             )
         }
         Text(text = summary)
