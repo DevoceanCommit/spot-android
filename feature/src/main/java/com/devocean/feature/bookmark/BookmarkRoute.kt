@@ -88,9 +88,8 @@ fun BookmarkScreen(
                         image = item.image,
                         title = item.title,
                         category = item.category,
-                        bookmark = item.bookmark,
                         summary = item.summary,
-                        isBookmark = true,
+                        isBookmark = item.bookmark,
                         spotDate = "spot date: 10/14"
                     )
                 }

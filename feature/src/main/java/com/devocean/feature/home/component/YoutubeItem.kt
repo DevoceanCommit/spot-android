@@ -18,8 +18,10 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.devocean.core.designsystem.component.button.TextButton
+import com.devocean.core.designsystem.theme.DevoceanSpotTheme
 import com.devocean.core.designsystem.theme.SpotGray
 import com.devocean.feature.R
 
@@ -29,7 +31,6 @@ fun YoutubeItem(
     image: Painter,
     title: String,
     category: String = "",
-    bookmark: Boolean = true,
     summary: String,
     onCategoryClick: () -> Unit = {},
     isBookmark: Boolean = false,
@@ -51,15 +52,15 @@ fun YoutubeItem(
                 .fillMaxWidth()
                 .aspectRatio(16 / 9f)
         )
+        Text(
+            text = title,
+            fontWeight = FontWeight.Bold,
+        )
         Row(
             modifier = modifier.padding(top = 10.dp),
             verticalAlignment = Alignment.CenterVertically,
             horizontalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            Text(
-                text = title,
-                fontWeight = FontWeight.Bold,
-            )
             TextButton(
                 paddingVertical = 0.dp,
                 onButtonClick = { onCategoryClick() },
@@ -77,5 +78,19 @@ fun YoutubeItem(
             )
         }
         Text(text = summary)
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun YoutubeItemPreview() {
+    DevoceanSpotTheme {
+        YoutubeItem(
+            image = painterResource(id = R.drawable.img_youtube_default_pic),
+            title = "데보션 영 3기 생생한 발대식 현장",
+            category = "IT",
+            isBookmark = false,
+            summary = "한줄요약"
+        )
     }
 }
